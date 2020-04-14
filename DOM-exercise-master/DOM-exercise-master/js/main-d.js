@@ -59,11 +59,15 @@ const picArray = [
 
 // Put code of task D here
 const main = document.querySelector('main');
+const imageModal = document.querySelector('#image-modal');
+const modalImage = document.querySelector('#image-modal img');
+const close = document.querySelector('#image-modal a');
 
 //silmukka joka kät läpi picArrayn
 //silmukan sisälle teht c koodi ja hae teksteihin ja atribuutteihin sisältö taulukosta
 
 for(const image of picArray) {
+
   const main = document.querySelector('main');
 
   const article = document.createElement('article');
@@ -92,6 +96,13 @@ for(const image of picArray) {
 
   const p = document.createElement('p');
   p.appendChild(t);
+
+  //avaa kuva modelissa
+  i.addEventListener('click', () => {
+    imageModal.classList.remove('hide');
+    modalImage.src = image.filename;
+    modalImage.alt = image.title;
+  });
 
   article.appendChild(header);
   article.appendChild(figure);
