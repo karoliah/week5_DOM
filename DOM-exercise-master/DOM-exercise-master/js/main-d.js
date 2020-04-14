@@ -104,6 +104,11 @@ for(const image of picArray) {
     modalImage.alt = image.title;
   });
 
+  //sulje modal
+  close.addEventListener('click', () => {
+    imageModal.classList.add('hide');
+  });
+
   article.appendChild(header);
   article.appendChild(figure);
   article.appendChild(p);
